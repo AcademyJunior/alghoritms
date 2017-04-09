@@ -1,37 +1,31 @@
+import com.sun.deploy.util.ArrayUtil;
+import com.sun.deploy.util.StringUtils;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class BinaryGapMaras {
 
     public static int solution(int n) {
         String binaryString = Integer.toBinaryString(n);
-        String[] ss = binaryString.split("");
-        ArrayList<Integer> list = new ArrayList<>();
-
-        for (int i = 0; i < ss.length; i++) {
-            list.add(Integer.parseInt(ss[i]));
-        }
-
-        while (list.get(list.size() - 1) == 0) {
-            list.remove(list.size() - 1);
-        }
-        for (int x = 1; x < list.size() - 1; x++) {
-            if(list.get(x) == 1 && (list.get(x-1) == 1 || list.get(x+1) ==1)){
-                list.remove(x);
-                x--;
-            }
-        }
-        binaryString = "";
-        for(int i: list){
-            binaryString += i;
-        }
-        ss = binaryString.split("1");
+        int length;
         int result = 0;
-        for(String string: ss){
-            if(string.length()>result){
+
+        String[] ss = binaryString.split("");
+        while (ss[ss.length - 1].equals("0")) {
+            length = ss.length;
+            ss = Arrays.copyOf(ss, length - 1);
+        }
+        binaryString = Arrays.toString(ss);
+        binaryString = binaryString.substring(1, binaryString.length() - 1)
+                .replace(", ", "");
+
+        ss = binaryString.split("1");
+        for (String string : ss) {
+            if (string.length() > result) {
                 result = string.length();
             }
         }
-
         return result;
     }
 }
