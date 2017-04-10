@@ -23,6 +23,7 @@ public class OddOccurrencesInArray {
                 } else
                     i++;
             }
+            
             return list.get(0);
         }
     }
