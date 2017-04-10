@@ -22,6 +22,7 @@ public class OddOccurrencesInArray {
                     list.remove(i);
                 } else
                     i++;
+
             }
             return list.get(0);
         }
