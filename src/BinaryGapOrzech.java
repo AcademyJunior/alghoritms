@@ -4,22 +4,21 @@
 public class BinaryGapOrzech {
     public int solutionOrzech(int N){
         String nat=Integer.toBinaryString(N);
-        String[]binaryArray=nat.split("");
-        int binaryGapRow=0;
+        List<String> myList = new ArrayList<String>(Arrays.asList(nat.split("")));
+        int binaryGap=0;
         int biggestGap=0;
 
-        for(int i=0; i<binaryArray.length && binaryArray.length!=0;i++){
-            if(binaryArray[i].equals("0")){
-                binaryGapRow++;
+        for(int i=0;i<myList.size() && myList.size()!=0;i++){
+            if(myList.get(i).equals("0")){
+                binaryGap++;
             }
-            else if(binaryArray[i].equals("1")){
-                if(binaryGapRow>0 && binaryGapRow>biggestGap){
-                    biggestGap=binaryGapRow;
-                    binaryGapRow=0;
+            else{
+                if(binaryGap>0 && binaryGap>biggestGap){
+                    biggestGap=binaryGap;
+                    binaryGap=0;
                 }
-                else{
-                    binaryGapRow=0;
-                }
+                else
+                    binaryGap=0;
             }
         }
         return biggestGap;
