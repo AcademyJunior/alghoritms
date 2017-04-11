@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Created by Łukasz on 2017-04-09.
  */
@@ -23,4 +28,7 @@ public class BinaryGapOrzech {
         }
         return biggestGap;
     }
+
+
+
 }
