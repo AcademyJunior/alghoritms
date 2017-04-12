@@ -4,7 +4,7 @@ public class Start {
 
         int[] numbers = {2, 3, 1, 5};
 
-        System.out.println(ArrayRotation.solution(numbers));
+        System.out.println(PermMissingMaras.solution(numbers));
 
         }
 
