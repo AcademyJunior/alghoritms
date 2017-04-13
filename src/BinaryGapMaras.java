@@ -1,27 +1,16 @@
-import com.sun.deploy.util.ArrayUtil;
-import com.sun.deploy.util.StringUtils;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+import static java.lang.Integer.toBinaryString;
+import static java.util.Arrays.*;
 
 public class BinaryGapMaras {
 
     public static int solution(int n) {
-        String binaryString = Integer.toBinaryString(n);
-        int length;
         int result = 0;
-
-        String[] ss = binaryString.split("");
-        while (ss[ss.length - 1].equals("0")) {
-            length = ss.length;
-            ss = Arrays.copyOf(ss, length - 1);
+        String binaryString = toBinaryString(n);
+        String[] stringArray = stringArray = binaryString.split("1");
+        if (binaryString.charAt(binaryString.length() - 1) == '0') {
+            stringArray = copyOf(stringArray, stringArray.length - 1);
         }
-        binaryString = Arrays.toString(ss);
-        binaryString = binaryString.substring(1, binaryString.length() - 1)
-                .replace(", ", "");
-
-        ss = binaryString.split("1");
-        for (String string : ss) {
+        for (String string : stringArray) {
             if (string.length() > result) {
                 result = string.length();
             }
