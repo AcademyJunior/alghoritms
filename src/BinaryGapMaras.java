@@ -18,3 +18,4 @@ public class BinaryGapMaras {
         return result;
     }
 }
+  
