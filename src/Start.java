@@ -1,7 +1,7 @@
 
 public class Start {
     public static void main(String[] args) {
-        BinaryGapOrzech bgo = new BinaryGapOrzech();
-        System.out.println(bgo.solutionOrzech(291));
+        int[] a = {2,2,3,4, 3};
+        System.out.println(MissingIntegerMaras.solution(a,  6));
     }
 }
