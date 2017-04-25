@@ -1,7 +1,6 @@
 
 public class Start {
     public static void main(String[] args) {
-        BinaryGapOrzech bgo = new BinaryGapOrzech();
-        System.out.println(bgo.solutionOrzech(291));
+        System.out.println(CountDivMaras.solution(0, 14, 2));
     }
 }
